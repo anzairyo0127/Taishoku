@@ -16,6 +16,7 @@ const Paper = () => {
               <td>
                 <article>This is an A4 document.</article>
                 <article>{state.name}</article>
+                <article>{state.department}</article>
               </td>
             </tr>
           </tbody>
