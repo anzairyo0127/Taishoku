@@ -1,0 +1,10 @@
+table.preview {
+  position: relative;
+  width: 91mm;
+  height: 55mm;
+  margin: 0 auto;
+  border: 1px solid;
+  border-collapse: collapse;
+  transform:scale(1.15);
+  transform-origin:top;
+}

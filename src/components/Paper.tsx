@@ -1,4 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import * as Bl from "react-bulma-components";
+
 import { Store } from "../components/Store";
 import * as I from "../scripts/Interfaces";
 import * as E from "../scripts/Enums";
@@ -7,9 +9,18 @@ import * as E from "../scripts/Enums";
 const Paper = () => {
   const {state, dispatch} = useContext(Store);
   return (
-      <section className="sheet padding-10mm">
-        <article>This is an A5 document.</article>
-      </section>
+      <Bl.Columns.Column>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <article>This is an A4 document.</article>
+                <article>{state.name}</article>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </Bl.Columns.Column>
   );
 };
 
