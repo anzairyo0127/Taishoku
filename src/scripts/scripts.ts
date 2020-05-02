@@ -19,7 +19,10 @@ export const reducer = (state: I.State, action: I.Action):I.State => {
       return assignedString;
     case E.Action.ADD_DATE:
       const addDate = <I.AddDate>action.payload;
-      const assiginedAddDate = Object.assign(addDate, state);
+      const assiginedAddDate = Object.assign({}, state);
+      Object.keys(addDate).map((key)=>{
+        copyed[key] = assiginedAddDate[key];
+      });
       console.log(`E.Action.ADD_DATE: ${JSON.stringify(assiginedAddDate)}`)
       return assiginedAddDate;
     case E.Action.TOGGLE_BOOLEAN:

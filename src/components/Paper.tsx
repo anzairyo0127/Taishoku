@@ -8,19 +8,26 @@ import * as E from "../scripts/Enums";
 
 const Paper = () => {
   const {state, dispatch} = useContext(Store);
+  const options = {era: 'long'};
+  const jaDate = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', options).format(state.retirementDate);
+  const masu = "致します。";
   return (
-      <Bl.Columns.Column>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <article>This is an A4 document.</article>
-                <article>{state.name}</article>
-                <article>{state.department}</article>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <Bl.Columns.Column  className="is-8">
+        <div className="sheet">
+          <div className="title">退職届</div>
+          <div className="dearCompany">
+            <p>{state.companyName}</p>
+            <p>{state.distinationDepartment}　{state.distinationName}殿</p>
+          </div>
+          <div className="watashi">
+            <p>{state.department}</p>
+            <p>{state.name}</p>
+            <p>私議</p>
+          </div>
+          <div className="reason">
+            <p>このたび一身上の都合により、{jaDate}をもって退職{masu}</p>
+          </div>
+        </div>
       </Bl.Columns.Column>
   );
 };

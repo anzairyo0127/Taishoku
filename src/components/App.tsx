@@ -8,8 +8,8 @@ const Page = () => {
   const columnsClasses = ["is-fullheight"].join(" ");
   return (
     <Bl.Columns className={columnsClasses}>
-      <Forms />
       <Paper />
+      <Forms />
     </Bl.Columns>
   );
 };

@@ -1,10 +1,35 @@
-table.preview {
-  position: relative;
-  width: 91mm;
-  height: 55mm;
-  margin: 0 auto;
-  border: 1px solid;
-  border-collapse: collapse;
-  transform:scale(1.15);
-  transform-origin:top;
+.sheet {
+  background: white; /* 背景を白く */
+  box-shadow: 0 .5mm 2mm rgba(0,0,0,.3); /* ドロップシャドウ */
+  margin: 5mm;
+  height: 297mm;
+  width: 210mm;
+  padding-top: 32mm;
+  padding-left: 27mm;
+  padding-right: 27mm;
+}
+
+.dearCompany {
+  height: 22mm;
+}
+
+.title {
+  text-align: center;
+  height: 33mm;
+}
+
+.watashi {
+  text-align: right;
+  height: 44mm;
+}
+
+
+.reason {
+  height: 22mm;
+}
+
+
+@page {
+  size: A4;
+  margin: 0;
 }
