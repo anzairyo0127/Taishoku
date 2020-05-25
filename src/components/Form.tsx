@@ -7,12 +7,6 @@ import * as I from "../scripts/Interfaces";
 import * as E from "../scripts/Enums";
 import { Hook } from "flatpickr/dist/types/options";
 
-/*
-const useInput = (initState:string) => {
-  const [value, set] = useState(initState);
-  return {value, onChange: (e:any)=>{set(e.target.value)}}
-};
-*/
 const Form = () => {
   const {state, dispatch} = useContext(Store);
   const [name, setName] = useState(state.name);
@@ -20,7 +14,7 @@ const Form = () => {
   const [companyName, setCompanyName] = useState(state.companyName);
   const [distinationName, setDistinationName] = useState(state.distinationName);
   const [distinationDepartment, setDistinationDepartment] = useState(state.distinationDepartment);
-  const [retirementDate, setRetirementDate] = useState(state.distinationDepartment);
+  const [retirementDate, setRetirementDate] = useState(state.retirementDate);
 
   const handleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
     const key = event.target.name;
@@ -50,23 +44,6 @@ const Form = () => {
     });
   };
 
-  const datepick: any = (event:any) => {
-    const key = event.target.name;
-    const value = event.target.value;
-    const payload = {[key]: value};
-    switch (key) {
-      case "retirementDate":
-        setRetirementDate(value);
-        break
-    }
-    dispatch({
-      type: E.Action.ADD_DATE,
-      payload,
-      error: false
-    });
-    return 
-  };
-
   return (
     <Bl.Columns.Column className="is-auto">
       <Bl.Form.Label>辞めたい日</Bl.Form.Label>
@@ -82,6 +59,7 @@ const Form = () => {
             error: false
           });
         }}
+        defaultValue={JSON.stringify(retirementDate)}
         ></Flatpickr>
       <Bl.Form.Label>辞める人の名前</Bl.Form.Label>
       <Bl.Form.Input name="name" value={name} onChange={handleChange} />
