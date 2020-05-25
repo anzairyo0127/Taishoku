@@ -23,11 +23,19 @@
   height: 44mm;
 }
 
-
-.reason {
-  height: 22mm;
+.shizi {
+  text-align: right;
+  height: 33mm;
 }
 
+.reason {
+  height: 33mm;
+}
+
+.ijou {
+  text-align: right;
+  height: 44mm;
+}
 
 @page {
   size: A4;

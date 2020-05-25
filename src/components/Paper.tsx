@@ -10,6 +10,7 @@ const Paper = () => {
   const {state, dispatch} = useContext(Store);
   const options = {era: 'long'};
   const jaDate = new Intl.DateTimeFormat(['ja-JP-u-ca-japanese'], options).format(state.retirementDate);
+  const [reiwa, tuki, hi] = jaDate.split("/");
   const masu = "致します。";
   return (
       <Bl.Columns.Column  className="is-8">
@@ -22,10 +23,15 @@ const Paper = () => {
           <div className="watashi">
             <p>{state.department}</p>
             <p>{state.name}</p>
+          </div>
+          <div className="shizi">
             <p>私事、</p>
           </div>
           <div className="reason">
-            <p>このたび一身上の都合により、{jaDate}をもって退職{masu}</p>
+            <p>このたび一身上の都合により、{reiwa}年{tuki}月{hi}日をもって退職{masu}</p>
+          </div>
+          <div className="ijou">
+            <p>以上</p>
           </div>
         </div>
       </Bl.Columns.Column>
